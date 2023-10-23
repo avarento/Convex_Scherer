@@ -18,6 +18,13 @@ input {
     display: none;
 }
 
+.btn {
+    display: none;
+}
+ .upload {
+    display: inline;
+ }
+
 label {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
