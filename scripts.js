@@ -8,20 +8,16 @@ file.onchange = function() {
 }
 
 btn.onclick = function() {
-    //alert("Ainda sem solução...")
-    dowload();
+    let data = file.files[0];
+    let blob = new Blob([data], { type: "application/vnd.ms-excel" });
+    const link= window.document.createElement('a');
+    link.href = window.URL.createObjectURL(blob);
+    link.download =  "convex_" + file.files[0].name;
+    link.click();
+    window.URL.revokeObjectURL(link.href);
 }
 
-function download(file, "out.xlsx", "application/vnd.ms-excel"){
-    if(!contentType){
-        contentType = 'application/octet-stream';
-    }
-    var a = document.createElement('a');
-    var blob = new Blob([content], {'type':contentType});
-    a.href = window.URL.createObjectURL(blob);
-    a.download = filename;
-    a.click();
-}
+
 
 
 
