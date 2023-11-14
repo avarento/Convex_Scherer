@@ -8,7 +8,19 @@ file.onchange = function() {
 }
 
 btn.onclick = function() {
-    alert("Ainda sem solução...")
+    //alert("Ainda sem solução...")
+    dowload();
+}
+
+function download(file, "out.xlsx", "application/vnd.ms-excel"){
+    if(!contentType){
+        contentType = 'application/octet-stream';
+    }
+    var a = document.createElement('a');
+    var blob = new Blob([content], {'type':contentType});
+    a.href = window.URL.createObjectURL(blob);
+    a.download = filename;
+    a.click();
 }
 
 
