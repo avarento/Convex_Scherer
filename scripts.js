@@ -28,7 +28,15 @@ btn.onclick = function() {
     // link.download =  "convex_" + file.files[0].name;
     // link.click();
     // window.URL.revokeObjectURL(link.href);
+function manipular(htmlString) {
+    let parse = new DOMParser();
+    let doc = parse.parseFromString(htmlString, 'text/html');
+    let meuElemento = doc.querySelectorAll("#EdFornecedor");
+    return meuElemento;
+}
 
+let element = manipular(conteudoHTML);
+console.log(element)
 
 
     // const cheerio = require('cheerio');
