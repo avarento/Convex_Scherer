@@ -2,6 +2,7 @@ const upload = document.getElementById("upload");
 const btn = document.getElementById("btn");
 const file = document.getElementById("fileUploaded");
 let html;
+let elementDOM;
 
 file.onchange = function() {
 
@@ -40,8 +41,8 @@ btn.onclick = function() {
         return array;
     }
 
-    html = creatDOM(html);
-    console.log(html)
+    elementDOM = creatDOM(html);
+    console.log(elementDOM)
 
         
     
