@@ -1,72 +1,52 @@
 const upload = document.getElementById("upload");
 const btn = document.getElementById("btn");
 const file = document.getElementById("fileUploaded");
-let conteudoHTML;
+let html;
 
 file.onchange = function() {
+
     btn.style.display = "inline";
     upload.style.display = "none";
-
     const data = file.files[0];
-    let leitor = new FileReader();
-    
-    leitor.onload = function (e) {
-        conteudoHTML = e.target.result;
-        
-     
-
+    let reader = new FileReader();  
+    reader.onload = function (e) {
+        html = e.target.result;
     }
 
-    leitor.readAsText(data)
+    reader.readAsText(data)
 }
 
 btn.onclick = function() {
-    // let data = file.files[0];
-    // let blob = new Blob([data], { type: "application/vnd.ms-excel" });
-    // const link= window.document.createElement('a');
-    // link.href = window.URL.createObjectURL(blob);
-    // link.download =  "convex_" + file.files[0].name;
-    // link.click();
-    // window.URL.revokeObjectURL(link.href);
-function manipular(htmlString) {
-    let parse = new DOMParser();
-    let doc = parse.parseFromString(htmlString, 'text/html');
-    let meuElemento = doc.querySelectorAll("#EdFornecedor");
-    return meuElemento;
-}
-
-let element = manipular(conteudoHTML);
-console.log(element)
-
-
-    // const cheerio = require('cheerio');
-    // const $ = cheerio.load(conteudoHTML);
-    // var titulo = $('h1').text();
-    console.log(conteudoHTML);
     
-  
-    // let array = [];
+    function creatDOM(htmlString) {
+        let parse = new DOMParser();
+        let DOM = parse.parseFromString(htmlString, 'text/html');
+
+        let array = [];
 
 
-    // for (let i = 0; document.querySelectorAll("#EdFornecedor")[i].textContent != '\nSCHERER S/A COMERCIO DE AUTOPECAS\n'; i++) {
+        for (let i = 0; DOM.querySelectorAll("#EdFornecedor")[i].textContent != '\nSCHERER S/A COMERCIO DE AUTOPECAS\n'; i++) {
 
-    //     let obj = {
-    //         "fornecedor": document.querySelectorAll("#EdFornecedor")[i].textContent.replace(/\n/g, ''),
-    //         "nota": document.querySelectorAll("#EdNota")[i].textContent.replace(/\n/g, ''),
-    //         "data": document.querySelectorAll("#EdData")[i].textContent.replace(/\n/g, ''),
-    //         "volumes": document.querySelectorAll("#edVolumes")[i].textContent.replace(/\n/g, ''),
-    //         "valor": document.querySelectorAll("#EdValor")[i].textContent.replace(/\n/g, '')
-    //     }
-    //     array.push(obj)
-    // }
+            let obj = {
+                "fornecedor": DOM.querySelectorAll("#EdFornecedor")[i].textContent.replace(/\n/g, ''),
+                "nota": DOM.querySelectorAll("#EdNota")[i].textContent.replace(/\n/g, ''),
+                "data": DOM.querySelectorAll("#EdData")[i].textContent.replace(/\n/g, ''),
+                "volumes": DOM.querySelectorAll("#edVolumes")[i].textContent.replace(/\n/g, ''),
+                "valor": DOM.querySelectorAll("#EdValor")[i].textContent.replace(/\n/g, '')
+            }
+            array.push(obj)
+        }
+        
+        return array;
+    }
 
+    let element = creatDOM(html);
+    console.log(element)
 
-    // console.log("\nRelátório: \n ", array)
-
+        
+    
 
 
 
 }
-
-
 
