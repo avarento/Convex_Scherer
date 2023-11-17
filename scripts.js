@@ -40,8 +40,8 @@ btn.onclick = function() {
         return array;
     }
 
-    let element = creatDOM(html);
-    console.log(element)
+    html = creatDOM(html);
+    console.log(html)
 
         
     
