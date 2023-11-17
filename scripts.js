@@ -4,8 +4,8 @@ const file = document.getElementById("fileUploaded");
 let html;
 let elementDOM;
 
-file.onchange = function() {
 
+file.onchange = function() {
     btn.style.display = "inline";
     upload.style.display = "none";
     const data = file.files[0];
@@ -13,21 +13,16 @@ file.onchange = function() {
     reader.onload = function (e) {
         html = e.target.result;
     }
-
     reader.readAsText(data)
 }
 
-btn.onclick = function() {
-    
+
+btn.onclick = function() {    
     function creatDOM(htmlString) {
         let parse = new DOMParser();
         let DOM = parse.parseFromString(htmlString, 'text/html');
-
         let array = [];
-
-
         for (let i = 0; DOM.querySelectorAll("#EdFornecedor")[i].textContent != '\nSCHERER S/A COMERCIO DE AUTOPECAS\n'; i++) {
-
             let obj = {
                 "fornecedor": DOM.querySelectorAll("#EdFornecedor")[i].textContent.replace(/\n/g, ''),
                 "nota": DOM.querySelectorAll("#EdNota")[i].textContent.replace(/\n/g, ''),
@@ -37,17 +32,9 @@ btn.onclick = function() {
             }
             array.push(obj)
         }
-        
         return array;
     }
-
     elementDOM = creatDOM(html);
     console.log(elementDOM)
-
-        
-    
-
-
-
 }
 
