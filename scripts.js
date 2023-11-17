@@ -36,5 +36,11 @@ btn.onclick = function() {
     }
     elementDOM = creatDOM(html);
     console.log(elementDOM)
+
+    let sheet = XLSX.utils.json_to_sheet(elementDOM)
+    const workBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workBook, sheet, 'Sheet 1');
+    XLSX.writeFile(workBook, './sample.xlsx');
+    
 }
 
