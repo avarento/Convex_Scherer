@@ -13,11 +13,13 @@
       <td>Data em análise</td>
     </tr>
       <th scope="row">Relátório resumo tranferidas</th>
+    <center>
       <td>☑</td>
+    </center>
     </tr>
     <tr>
       <th scope="row">Visualizar</th>
-      <td>click</td>
+      <td>CLICK</td>
     </tr>
   </tbody>
  
