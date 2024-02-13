@@ -10,7 +10,7 @@ file.onchange = function() {
     if (file.files[0].type !== 'text/html') {
         alert("O tipo do arquivo aceito é somente .html");
     } else {
-        btn.style.color = "black";
+        //btn.style.color = "black";
         btn.style.display = "inline";
         upload.style.display = "none";
         const data = file.files[0];
