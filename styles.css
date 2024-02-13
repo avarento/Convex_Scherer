@@ -20,6 +20,7 @@ input {
 
 .btn {
     display: none;
+    animation: 'fade 1s ease-in-out infinite alternate';
 }
  .upload {
     display: inline;
