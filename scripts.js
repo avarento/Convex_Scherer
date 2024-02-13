@@ -10,7 +10,6 @@ file.onchange = function() {
     btn.style.display = "inline";
     upload.style.display = "none";
     const data = file.files[0];
-    let fileName = data.file
     let reader = new FileReader();  
     reader.onload = function (e) {
         html = e.target.result;
