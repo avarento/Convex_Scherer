@@ -1,12 +1,9 @@
 <h1>Usando o conversor</h1>
 
 1 - Dentro do TDR siga até ESTOQUE > RELATÓRIOS > RELATÓRIO NOTAS DE ENTRADA;
-
+2 - Na janela "Relatório de Nortas Fiscais de Entrada" configure: <br>
 <table>
-  <caption>
-    2 - Na janela "Relatório de Nortas Fiscais de Entrada" configure: <br>
-  </caption>
-  <tbody><center>
+  <tbody>
     <tr>
       <th scope="row">Data inicial</th>
       <td>Data em análise</td>
@@ -22,7 +19,6 @@
       <th scope="row">Visualizar</th>
       <td>click</td>
     </tr>
-  </center>
   </tbody>
  
 
