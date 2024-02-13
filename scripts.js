@@ -7,6 +7,7 @@ let namefile;
 
 
 file.onchange = function() {
+    btn.style.color = "black";
     btn.style.display = "inline";
     upload.style.display = "none";
     const data = file.files[0];
