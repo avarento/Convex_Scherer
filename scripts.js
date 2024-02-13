@@ -7,15 +7,19 @@ let namefile;
 
 
 file.onchange = function() {
-    btn.style.color = "black";
-    btn.style.display = "inline";
-    upload.style.display = "none";
-    const data = file.files[0];
-    let reader = new FileReader();  
-    reader.onload = function (e) {
-        html = e.target.result;
+    if (file.files[0].type !== 'text/html') {
+        alert("O tipo do arquivo aceito é somente .html");
+    } else {
+        btn.style.color = "black";
+        btn.style.display = "inline";
+        upload.style.display = "none";
+        const data = file.files[0];
+        let reader = new FileReader();  
+        reader.onload = function (e) {
+            html = e.target.result;
+        }
+        reader.readAsText(data)
     }
-    reader.readAsText(data)
 }
 
 
