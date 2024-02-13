@@ -5,12 +5,9 @@ Configure:
 
 <table>
   <caption>
-    Front-end web developer course 2021
+    Na janela "Relatório de Nortas Fiscais de Entrada"
   </caption>
-
-
-  
-  <tbody>
+  <tbody><center>
     <tr>
       <th scope="row">Data inicial</th>
       <td>Data em análise</td>
@@ -26,6 +23,7 @@ Configure:
       <th scope="row">Visualizar</th>
       <td>click</td>
     </tr>
+  </center>
   </tbody>
  
 
