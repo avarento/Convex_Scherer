@@ -24,9 +24,11 @@ btn.onclick = function() {
         let array = [];
         for (let i = 0; DOM.querySelectorAll("#EdFornecedor")[i].textContent != '\nSCHERER S/A COMERCIO DE AUTOPECAS\n'; i++) {
             let obj = {
+                //esqueci de usar o .innerText
                 "fornecedor": DOM.querySelectorAll("#EdFornecedor")[i].textContent.replace(/\n/g, ''),
                 "nota": DOM.querySelectorAll("#EdNota")[i].textContent.replace(/\n/g, ''),
                 "data": DOM.querySelectorAll("#EdData")[i].textContent.replace(/\n/g, ''),
+                "datae" DOM.querySelector("#EdPeriodo").innerText.slice(9,19),
                 "volumes": DOM.querySelectorAll("#edVolumes")[i].textContent.replace(/\n/g, ''),
                 "valor": DOM.querySelectorAll("#EdValor")[i].textContent.replace(/\n/g, '')
             }
