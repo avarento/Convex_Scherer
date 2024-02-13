@@ -5,6 +5,28 @@ let html;
 let elementDOM;
 let namefile;
 
+
+     function add (fornecedor, nf, dataemissao, dataentrada, volume, valor, diff){
+
+    var corpoTabela = document.querySelector('tbody');
+    
+    var tr= document.createElement('tr');
+    var tdfornecedor= document.createElement('td');
+    var tdnf= document.createElement('td');
+    var tddataemissao= document.createElement('td');
+    var tddataentrada= document.createElement('td');
+         var tdvolume= document.createElement('td');
+         var tdvalor= document.createElement('td');
+         var tddiff= document.createElement('td');
+    
+    tdfornecedor.textContent = fornecedor;
+    
+    
+    tr.appendChild(tdfornecedor);
+    
+    corpoTabela.appendChild(tr);
+    }
+
 function dateDifference(a, b) {
     let x = a.split("/");
     const date1 = new Date(x[2] + '/' + x[1] + '/' + x[0]);
