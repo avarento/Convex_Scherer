@@ -30,6 +30,10 @@ btn.onclick = function() {
         namefile = DOM.querySelector("#EdPeriodo").innerText.slice(10,20);
         let array = [];
         for (let i = 0; DOM.querySelectorAll("#EdFornecedor")[i].textContent != '\nSCHERER S/A COMERCIO DE AUTOPECAS\n'; i++) {
+            let dataEmissao = new Date (DOM.querySelector("#EdPeriodo").innerText.slice(10,20));
+            let dataEntrada = new Date (DOM.querySelector("#EdPeriodo").innerText.slice(10,20));
+            let diferencaMill = dataEntrada - dataEmissao;
+            let diferencaDias = diferencaMill / (1000 * 60 * 60 * 24);
             let obj = {
                 //esqueci de usar o .innerText
                 "fornecedor": DOM.querySelectorAll("#EdFornecedor")[i].textContent.replace(/\n/g, ''),
@@ -37,7 +41,8 @@ btn.onclick = function() {
                 "data": DOM.querySelectorAll("#EdData")[i].textContent.replace(/\n/g, ''),
                 "datae": DOM.querySelector("#EdPeriodo").innerText.slice(10,20),
                 "volumes": DOM.querySelectorAll("#edVolumes")[i].textContent.replace(/\n/g, ''),
-                "valor": DOM.querySelectorAll("#EdValor")[i].textContent.replace(/\n/g, '')
+                "valor": DOM.querySelectorAll("#EdValor")[i].textContent.replace(/\n/g, ''),
+                "demora": diferencaDias;
             }
             array.push(obj)
         }
