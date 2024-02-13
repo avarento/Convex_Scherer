@@ -22,4 +22,5 @@
   </tbody>
 </table> <br>
 
-3- Com o relatório completamente carregado, vá até o ícone de disquete "Save Report"
+3 - Com o relatório completamente carregado, vá até o ícone de disquete "Save Report";<br><br>
+4 - Dentro da janela Save Report edite o nome como necessário e altere o tipo para "HTML DOCUMENT (*.html)"
