@@ -42,7 +42,7 @@ btn.onclick = function() {
                 "datae": DOM.querySelector("#EdPeriodo").innerText.slice(10,20),
                 "volumes": DOM.querySelectorAll("#edVolumes")[i].textContent.replace(/\n/g, ''),
                 "valor": DOM.querySelectorAll("#EdValor")[i].textContent.replace(/\n/g, ''),
-                "demora": diferencaDias;
+                "demora": diferencaDias
             }
             array.push(obj)
         }
