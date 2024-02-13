@@ -1,7 +1,7 @@
 <h1>Usando o conversor</h1>
 
 1 - Dentro do TDR siga até ESTOQUE > RELATÓRIOS > RELATÓRIO NOTAS DE ENTRADA; <br><br>
-2 - Na janela "Relatório de Nortas Fiscais de Entrada" configure:<br>
+2 - Na janela "Relatório de Notas Fiscais de Entrada" configure:<br>
 <table>
   <tbody>
     <tr>
