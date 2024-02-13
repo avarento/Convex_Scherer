@@ -30,7 +30,7 @@ btn.onclick = function() {
                 "fornecedor": DOM.querySelectorAll("#EdFornecedor")[i].textContent.replace(/\n/g, ''),
                 "nota": DOM.querySelectorAll("#EdNota")[i].textContent.replace(/\n/g, ''),
                 "data": DOM.querySelectorAll("#EdData")[i].textContent.replace(/\n/g, ''),
-                "datae" DOM.querySelector("#EdPeriodo").innerText.slice(9,19),
+                "datae": DOM.querySelector("#EdPeriodo").innerText.slice(9,19),
                 "volumes": DOM.querySelectorAll("#edVolumes")[i].textContent.replace(/\n/g, ''),
                 "valor": DOM.querySelectorAll("#EdValor")[i].textContent.replace(/\n/g, '')
             }
