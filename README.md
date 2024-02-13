@@ -4,7 +4,7 @@
 
 <table>
   <caption>
-    2 - Na janela "Relatório de Nortas Fiscais de Entrada" configure:
+    2 - Na janela "Relatório de Nortas Fiscais de Entrada" configure: <br>
   </caption>
   <tbody><center>
     <tr>
