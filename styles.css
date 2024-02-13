@@ -20,8 +20,15 @@ input {
 
 .btn {
     display: none;
-    animation: 'fade 1s ease-in-out infinite alternate';
+    animation: blinker 1s linear infinite;
 }
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
  .upload {
     display: inline;
  }
