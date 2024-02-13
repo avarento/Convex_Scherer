@@ -32,7 +32,7 @@ btn.onclick = function() {
         for (let i = 0; DOM.querySelectorAll("#EdFornecedor")[i].textContent != '\nSCHERER S/A COMERCIO DE AUTOPECAS\n'; i++) {
             let dataEmissao = new Date (DOM.querySelectorAll("#EdData")[i].textContent.replace(/\n/g, ''));
             let dataEntrada = new Date (DOM.querySelector("#EdPeriodo").innerText.slice(10,20));
-            let diferencaMill = dataEntrada - dataEmissao;
+            let diferencaMill = dataEmissao - dataEntrada;
             let diferencaDias = diferencaMill / (1000 * 60 * 60 * 24);
             let obj = {
                 //esqueci de usar o .innerText
