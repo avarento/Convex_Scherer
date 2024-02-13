@@ -50,6 +50,6 @@ btn.onclick = function() {
     const workBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workBook, sheet, 'Sheet 1');
     XLSX.writeFile(workBook, './' + namefile + '.xlsx');
-    
+    location.reload();
 }
 
