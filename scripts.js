@@ -44,7 +44,7 @@ btn.onclick = function() {
         for (let i = 0; DOM.querySelectorAll("#EdFornecedor")[i].textContent != '\nSCHERER S/A COMERCIO DE AUTOPECAS\n'; i++) {
             let dataA = DOM.querySelectorAll("#EdData")[i].textContent.replace(/\n/g, '');
             let dataB = DOM.querySelector("#EdPeriodo").innerText.slice(10,20);
-            let diff = dateFifference(dataA, dataB);
+            let diff = dateDifference(dataA, dataB);
             
             let obj = {
                 //esqueci de usar o .innerText
