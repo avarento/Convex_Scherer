@@ -25,4 +25,4 @@
 3 - Com o relatório completamente carregado, vá até o ícone de disquete "Save Report";<br><br>
 4 - Dentro da janela Save Report edite o nome como necessário e altere o tipo para "HTML document (*.HTM)";<br><br>
 5 - Navegue até https://avarento.github.io/Convex_Scherer/, envie o relatório salvo e o converta;<br><br>
-6 - Copiei os dados do arquivo de saída para utilizar na tebela de controle interna.
+6 - Copiei os dados do arquivo de saída para utilizar na tebela de controle interno.
