@@ -22,7 +22,7 @@ btn.onclick = function() {
     function creatDOM(htmlString) {
         let parse = new DOMParser();
         let DOM = parse.parseFromString(htmlString, 'text/html');
-        namefile = DOM.querySelector("#EdPeriodo").innerText.slice(9,19);
+        namefile = DOM.querySelector("#EdPeriodo").innerText.slice(10,20);
         let array = [];
         for (let i = 0; DOM.querySelectorAll("#EdFornecedor")[i].textContent != '\nSCHERER S/A COMERCIO DE AUTOPECAS\n'; i++) {
             let obj = {
@@ -30,7 +30,7 @@ btn.onclick = function() {
                 "fornecedor": DOM.querySelectorAll("#EdFornecedor")[i].textContent.replace(/\n/g, ''),
                 "nota": DOM.querySelectorAll("#EdNota")[i].textContent.replace(/\n/g, ''),
                 "data": DOM.querySelectorAll("#EdData")[i].textContent.replace(/\n/g, ''),
-                "datae": DOM.querySelector("#EdPeriodo").innerText.slice(9,19),
+                "datae": DOM.querySelector("#EdPeriodo").innerText.slice(10,20),
                 "volumes": DOM.querySelectorAll("#edVolumes")[i].textContent.replace(/\n/g, ''),
                 "valor": DOM.querySelectorAll("#EdValor")[i].textContent.replace(/\n/g, '')
             }
