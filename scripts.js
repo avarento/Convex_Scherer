@@ -125,6 +125,5 @@ download.onclick = function(){
 }
 	
 copy_btn.onclick = function(){
-	document.querySelector("tbody").select();
-	document.execCommand('copy')
+	alert("Ainda n funciona...");
 }
