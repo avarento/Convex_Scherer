@@ -58,7 +58,7 @@ btn.onclick = function() {
                 "valor": DOM.querySelectorAll("#EdValor")[i].textContent.replace(/\n/g, ''),
                 "demora": diff
             }
-             add(obj.fornecedor, obj.nota, obj.data, obj.datae, obj.volumes, obj.valor, obj.demora)
+             
             array.push(obj)
         }
         return array;
