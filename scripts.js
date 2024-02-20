@@ -1,6 +1,8 @@
 const upload = document.getElementById("btn-up");
 const convert = document.getElementById("btn-conv");
 const download = document.getElementById("btn-down");
+const copy = document.getElementById("copy-container");
+const copy_btn = document.getElementById("btn-copy");
 const file = document.getElementById("fileUploaded");
 let html;
 let elementDOM;
@@ -75,8 +77,8 @@ file.onchange = function() {
 
 
 convert.onclick = function() {
-	
-    function creatDOM(htmlString) {
+	if (file.files.length !== 0) {
+		function creatDOM(htmlString) {
         let parse = new DOMParser();
         let DOM = parse.parseFromString(htmlString, 'text/html');
         namefile = DOM.querySelector("#EdPeriodo").innerText.slice(10,20);
@@ -103,16 +105,26 @@ convert.onclick = function() {
     }
     elementDOM = creatDOM(html);
     console.log(elementDOM)
-
+    copy.style.display = "inline";
     
+	} else {
+		alert("Sem arquivos para converter!");
+	}
     
 }
 
 download.onclick = function(){
-	
-    let sheet = XLSX.utils.json_to_sheet(elementDOM);
+	if (document.querySelector("tbody").children.length > 1) {
+		let sheet = XLSX.utils.json_to_sheet(elementDOM);
     workBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workBook, sheet, 'Sheet 1');
-	XLSX.writeFile(workBook, './' + namefile + '.xlsx');
+		XLSX.writeFile(workBook, './' + namefile + '.xlsx');
+	} else {
+		alert("Sem dados para download!");
+	} 
 }
 	
+copy_btn.onclick = function(){
+	document.querySelector("tbody").select();
+	document.execCommand('copy')
+}
