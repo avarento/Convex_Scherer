@@ -6,21 +6,44 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" href="styles.css"> 
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
-        <title>Convex</title>
-          
-     
+        <title>Convex</title>     
     </header>
 
     <body>
-        <h1>CONVEX</h1>
-        <br>
-       
-        <input type="file" id="fileUploaded"/>
-        <label id="upload" class="upload" for="fileUploaded" >Enviar arquivo</label>
-        <label id="btn" class="btn">Converter</label>
-
-        
-        <script type="text/javascript" src="scripts.js"></script>
-        
+        <div class= "main-container">
+            <div class= "top-container">	
+    			<div class= "icon-container"> 			
+    			    <img class= "icon" src="https://th.bing.com/th/id/OIG1.hqFcyWzeE39RrN1TdRUF?w=1024&h=1024&rs=1&pid=ImgDetMain">
+    			</div>
+    			<div class= "title-container"> 
+    			    <h3 class= "title">Conversor de relatórios
+    				<br>HTML para XLSX</h3>
+    			</div>	
+    			<div class= "buttons-container">
+    				<button class="btn-up" id= "btn-up">Upload</button>
+    				<button class="btn-conv" id= "btn-conv">Converter</button>
+    				<button class="btn-down" id= "btn-down">Download</button>
+    			</div>
+    		</div>
+    		<div class= "middle">
+    		    <input type="file" id="fileUploaded" style="display: none;"/>
+            	<div class= "main-box">
+            	    <br>
+                    <table>
+    					<tbody>
+    				        <tr>
+    						    <th>Fornecedor</th> 
+    							<th>NF</th>
+    							<th>Data de emissão</th>
+    							<th>Data de entrada</th>
+    							<th>Volumes</th>
+    							<th>Valor</th>
+    							<th>Tempo de entrega</th>
+      						</tr>
+    					</tbody>
+    				</table>
+    		    </div>
+    	    </div>
+        </div>  
     </body>
 </html>
