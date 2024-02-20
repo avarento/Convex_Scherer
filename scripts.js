@@ -6,35 +6,6 @@ let elementDOM;
 let namefile;
 
 
-function add (fornecedor, nf, dataemissao, dataentrada, volume, valor, diff){
-    var corpoTabela = document.querySelector('tbody');
-    var tr= document.createElement('tr');
-    var tdfornecedor= document.createElement('td');
-    var tdnf= document.createElement('td');
-    var tddataemissao= document.createElement('td');
-    var tddataentrada= document.createElement('td');
-    var tdvolume= document.createElement('td');
-    var tdvalor= document.createElement('td');
-    var tddiff= document.createElement('td');
-    
-    tdfornecedor.textContent = fornecedor;
-    tdnf.textContent = nf;
-    tddataemissao.textContent = dataemissao;
-    tddataentrada.textContent = dataentrada;
-    tdvolume.textContent = volume;
-    tdvalor.textContent = valor;
-    tddiff.textContent = diff;
-    
-    tr.appendChild(tdfornecedor);
-     tr.appendChild(tdnf);
-     tr.appendChild(tddataemissao);
-     tr.appendChild(tddataentrada);
-     tr.appendChild(tdvolume);
-     tr.appendChild(tdvalor);
-     tr.appendChild(tddiff);
-    
-    corpoTabela.appendChild(tr);
-    }
 
 function dateDifference(a, b) {
     let x = a.split("/");
