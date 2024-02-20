@@ -6,9 +6,15 @@ let html;
 let elementDOM;
 let namefile;
 let workBook;
+
+
+
 upload.onclick = function() {
-			file.click(); 
+
+			file.click();
+   
 };
+
 function add (fornecedor, nf, dataemissao, dataentrada, volume, valor, diff){
     var corpoTabela = document.querySelector('tbody');
     var tr= document.createElement('tr');
@@ -19,6 +25,7 @@ function add (fornecedor, nf, dataemissao, dataentrada, volume, valor, diff){
     var tdvolume= document.createElement('td');
     var tdvalor= document.createElement('td');
     var tddiff= document.createElement('td');
+    
     tdfornecedor.textContent = fornecedor;
     tdnf.textContent = nf;
     tddataemissao.textContent = dataemissao;
@@ -26,31 +33,37 @@ function add (fornecedor, nf, dataemissao, dataentrada, volume, valor, diff){
     tdvolume.textContent = volume;
     tdvalor.textContent = valor;
     tddiff.textContent = diff;
+    
     tr.appendChild(tdfornecedor);
-    tr.appendChild(tdnf);
-    tr.appendChild(tddataemissao);
-    tr.appendChild(tddataentrada);
-    tr.appendChild(tdvolume);
-    tr.appendChild(tdvalor);
-    tr.appendChild(tddiff);
+     tr.appendChild(tdnf);
+     tr.appendChild(tddataemissao);
+     tr.appendChild(tddataentrada);
+     tr.appendChild(tdvolume);
+     tr.appendChild(tdvalor);
+     tr.appendChild(tddiff);
+    
     corpoTabela.appendChild(tr);
     }
+
 function dateDifference(a, b) {
     let x = a.split("/");
     const date1 = new Date(x[2] + '/' + x[1] + '/' + x[0]);
     let y = b.split("/");
     const date2 = new Date(y[2] + '/' + y[1] + '/' + y[0]);
-    const diffInMil = Math.abs(date2 - date1);
-    const diffInSec = diffInMil / 1000;
-    const diffInMin = diffInSec / 60;
-    const diffInH = diffInMin / 60;
-    const diffInD = diffInH / 24;
-    return diffInD
+    const diffInMilliseconds = Math.abs(date2 - date1);
+    const diffInSeconds = diffInMilliseconds / 1000;
+    const diffInMinutes = diffInSeconds / 60;
+    const diffInHours = diffInMinutes / 60;
+    const diffInDays = diffInHours / 24;
+    return diffInDays
 }
+
 file.onchange = function() {
     if (file.files[0].type !== 'text/html') {
         alert("O tipo do arquivo aceito é somente .html");
     } else {
+      
+
         const data = file.files[0];
         let reader = new FileReader();  
         reader.onload = function (e) {
@@ -59,7 +72,10 @@ file.onchange = function() {
         reader.readAsText(data)
     }
 }
+
+
 convert.onclick = function() {
+	
     function creatDOM(htmlString) {
         let parse = new DOMParser();
         let DOM = parse.parseFromString(htmlString, 'text/html');
@@ -68,9 +84,10 @@ convert.onclick = function() {
         for (let i = 0; DOM.querySelectorAll("#EdFornecedor")[i].textContent != '\nSCHERER S/A COMERCIO DE AUTOPECAS\n'; i++) {
             let dataA = DOM.querySelectorAll("#EdData")[i].textContent.replace(/\n/g, '');
             let dataB = DOM.querySelector("#EdPeriodo").innerText.slice(10,20);
-            let diff = dateDifference(dataA, dataB);          
+            let diff = dateDifference(dataA, dataB);
+            
             let obj = {
-                //esqueci que dava pra usar o .innerText pra n precisar usar replace k
+                //esqueci de usar o .innerText
                 "fornecedor": DOM.querySelectorAll("#EdFornecedor")[i].textContent.replace(/\n/g, ''),
                 "nota": DOM.querySelectorAll("#EdNota")[i].textContent.replace(/\n/g, ''),
                 "data": DOM.querySelectorAll("#EdData")[i].textContent.replace(/\n/g, ''),
@@ -85,9 +102,14 @@ convert.onclick = function() {
         return array;
     }
     elementDOM = creatDOM(html);
-    console.log(elementDOM)   
+    console.log(elementDOM)
+
+    
+    
 }
+
 download.onclick = function(){
+	
     let sheet = XLSX.utils.json_to_sheet(elementDOM);
     workBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workBook, sheet, 'Sheet 1');
