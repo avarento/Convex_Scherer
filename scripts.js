@@ -124,6 +124,8 @@ download.onclick = function(){
 	} 
 }
 	
-copy_btn.onclick = function(){
-	alert("Ainda n funciona...");
+copy_btn.onclick = async function(){
+	let tr1 = `Fornecedor	NF	Data de emissão	Data de entrada	Volumes	Valor	Tempo de entrega
+`;
+	await navigator.clipboard.writeText(document.querySelector('tbody').innerText.replace(tr1,""));
 }
