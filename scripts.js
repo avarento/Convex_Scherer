@@ -1,6 +1,4 @@
 const upload = document.getElementById("btn-up");
-const convert = document.getElementById("btn-conv");
-const download = document.getElementById("btn-down");
 const copy = document.getElementById("copy-container");
 const copy_btn = document.getElementById("btn-copy");
 const file = document.getElementById("fileUploaded");
@@ -70,13 +68,14 @@ file.onchange = function() {
         let reader = new FileReader();  
         reader.onload = function (e) {
             html = e.target.result;
+					conv();
         }
         reader.readAsText(data)
     }
 }
 
 
-convert.onclick = function() {
+function conv() {
 	if (file.files.length !== 0) {
 		function creatDOM(htmlString) {
         let parse = new DOMParser();
@@ -113,16 +112,7 @@ convert.onclick = function() {
     
 }
 
-download.onclick = function(){
-	if (document.querySelector("tbody").children.length > 1) {
-		let sheet = XLSX.utils.json_to_sheet(elementDOM);
-    workBook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(workBook, sheet, 'Sheet 1');
-		XLSX.writeFile(workBook, './' + namefile + '.xlsx');
-	} else {
-		alert("Sem dados para download!");
-	} 
-}
+
 	
 copy_btn.onclick = async function(){
 	let tr1 = `Fornecedor	NF	Data de emissão	Data de entrada	Volumes	Valor	Tempo de entrega
