@@ -1,70 +1,50 @@
+
 <html>
-<head>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
- <title>Convex</title>
-<meta charset="UTF-8"/>
-<link rel="stylesheet" href="styles.css"> 
-</head>
-  
-  
-<body>
-	<div class="main-container">
-
-		<div class="top-container">
-
-			<div class="icon-container">
-
-				<img class="icon" src="https://th.bing.com/th/id/OIG1.hqFcyWzeE39RrN1TdRUF?w=1024&h=1024&rs=1&pid=ImgDetMain">
-			</div>
-
-			<div class="title-container">
-				<h3 class="title">Conversor de relatórios
-					<br>HTML para XLSX
-				</h3>
-			</div>
-
-			<div class="buttons-container">
-				<button class="btn-up" id="btn-up">
-					Upload
-				</button>
-
-			</div>
-
-		</div>
-
-		<div class="middle">
-			<input type="file" id="fileUploaded" style="display: none;" />
-
-			<div class="main-box">
-
-				<div class="table-container">
-					<table>
-						<tbody id="tbody">
-							<tr>
-								<th>Fornecedor</th>
-								<th>NF</th>
-								<th>Data de emissão</th>
-								<th>Data de entrada</th>
-								<th>Volumes</th>
-								<th>Valor</th>
-								<th>Tempo de entrega</th>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-
-				<div id="copy-container" class="copy-container">
-					<br>
-					<button class="btn-copy" id="btn-copy">
-						Copiar
-					</button>
-					<br>
-				</div>
-			</div>
-
-		</div>
-
-	</div>
-<script type="text/javascript" src="scripts.js"></script>
-</body>
+  <head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+    <title>Convex</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="styles.css"> 
+  </head>  
+  <body>
+    <div class="main-container">
+      <div class="top-container">
+        <div class="icon-container">
+          <img class="icon" src="https://th.bing.com/th/id/OIG1.hqFcyWzeE39RrN1TdRUF?w=1024&h=1024&rs=1&pid=ImgDetMain">
+        </div>
+        <div class="title-container">
+          <h3 class="title">Conversor de relatórios<br>HTML para XLSX</h3>
+        </div>
+        <div class="buttons-container">
+          <button class="btn-up" id="btn-up">Upload</button>
+        </div>
+      </div>
+      <div class="middle">
+        <input type="file" id="fileUploaded" style="display: none;" />
+        <div class="main-box">
+          <div class="table-container">
+            <table>
+              <tbody id="tbody">
+                <tr>
+                  <th>Fornecedor</th>
+                  <th>NF</th>
+                  <th>Data de emissão</th>
+                  <th>Data de entrada</th>
+                  <th>Volumes</th>
+                  <th>Valor</th>
+                  <th>Tempo de entrega</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="copy-container" class="copy-container">
+            <br>
+            <button class="btn-copy" id="btn-copy">Copiar</button>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="scripts.js"></script>
+  </body>
 </html>
